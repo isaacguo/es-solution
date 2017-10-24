@@ -11,6 +11,7 @@
         <module>es-config-server</module>
         <module>es-eureka</module>
         <module>es-gateway</module>
+        <module>es-auth</module>
     </modules>
     <packaging>pom</packaging>
 
