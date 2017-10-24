@@ -12,6 +12,7 @@
         <module>es-eureka</module>
         <module>es-gateway</module>
         <module>es-auth</module>
+        <module>es-tool-support-obfuscation</module>
     </modules>
     <packaging>pom</packaging>
 
