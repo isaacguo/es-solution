@@ -6,6 +6,12 @@
     <groupId>com.keysight.es</groupId>
     <artifactId>es-solution</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>es-email</module>
+        <module>es-config-server</module>
+        <module>es-eureka</module>
+        <module>es-gateway</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>ES Solution</name>
