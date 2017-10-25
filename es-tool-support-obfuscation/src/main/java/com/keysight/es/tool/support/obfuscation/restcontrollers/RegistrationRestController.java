@@ -19,4 +19,5 @@ public class RegistrationRestController {
     {
         return registrationService.registration(regObject);
     }
+
 }

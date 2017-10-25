@@ -10,6 +10,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {BsModalModule} from "ng2-bs3-modal";
 import {IndexComponent} from "./components/public/index/index.component";
 import {LoginComponent} from "./components/public/login/login.component";
+import { DotfuscatorComponent } from './components/public/dotfuscator/dotfuscator.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {LoginComponent} from "./components/public/login/login.component";
     PublicComponent,
     SecureComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    DotfuscatorComponent
   ],
   imports: [
     BrowserModule, routing, BrowserModule, HttpModule, BsModalModule
