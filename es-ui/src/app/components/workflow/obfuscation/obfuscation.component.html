@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Obfuscation Request for Software Product and Regulatory </h1>
+  </div>
+  <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="alert alert-info" role="alert">
+  Please Review the <a
+  href="http://groups.collaboration.is.keysight.com/sites/emgsdc/Standards/Keysight%20.NET%20Obfuscation%20Standard.docx">Keysight
+  .NET Obfuscation Standard</a> for requirements regarding .NET obfuscation.
+</div>
+<div class="alert alert-info" role="alert">
+  <p>
+    The below form is used for validating whether the new requested project meets the obfuscation policy. Please
+    answer
+    below questions in order to get a approval for obfuscation request.
+  </p>
+  <p>
+    You need to answer all of the questions and then click 'submit', you can get the approval immediately with a form
+    id
+    if all questions are passed. Otherwise, you have to send email to emg-sw_thirdpartyswlicensing@keysight.com with
+    comments for manual check.
+  </p>
+</div>
+
+<form #requestForm="ngForm">
+  <div class="form-group">
+    <label for="user-name" class="control-label">User</label>
+    <input class="form-control" type="text" placeholder="You name" id="user-name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="project-name" class="control-label">Project</label>
+    <input class="form-control" type="text" placeholder="Project Name" id="project-name" required>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> Does the project codebase Keysight intellectual property (IP)?</label>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> Should the project codebase been obfuscated?</label>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> Export to external customers? </label>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> Windows Desktop Application?</label>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> WindowsCE Application?</label>
+  </div>
+
+  <div class="form-group">
+    <label><input type="checkbox"> Obfuscate all of the codes in codebase?</label>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" (click)="onSubmit()"
+            [disabled]="!requestForm.form.valid">Submit
+    </button>
+  </div>
+
+</form>
+
+
+
+
+

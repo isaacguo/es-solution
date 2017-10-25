@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecureComponent } from './secure.component';
+import { ObfuscationComponent } from './obfuscation.component';
 
-describe('SecureComponent', () => {
-  let component: SecureComponent;
-  let fixture: ComponentFixture<SecureComponent>;
+describe('ObfuscationComponent', () => {
+  let component: ObfuscationComponent;
+  let fixture: ComponentFixture<ObfuscationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecureComponent ]
+      declarations: [ ObfuscationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecureComponent);
+    fixture = TestBed.createComponent(ObfuscationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

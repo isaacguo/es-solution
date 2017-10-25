@@ -1,7 +1,8 @@
 import {RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {IndexComponent} from "./app/components/public/index/index.component";
-import {DotfuscatorComponent} from "./app/components/public/dotfuscator/dotfuscator.component";
+import {IndexComponent} from "./app/components/index/index.component";
+import {DotfuscatorComponent} from "./app/components/tools/dotfuscator/dotfuscator.component";
+import {ObfuscationComponent} from "./app/components/workflow/obfuscation/obfuscation.component";
 
 
 const appRoutes: Routes = [
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
       {
         path: 'dotfuscator',
         component: DotfuscatorComponent
+      },
+      {
+        path: 'obfuscation',
+        component: ObfuscationComponent
       }
     ]
   },

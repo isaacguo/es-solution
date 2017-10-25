@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
@@ -11,8 +11,13 @@
 .container-table {
   display: table;
 }
+
 .vertical-center-row {
   display: table-cell;
   vertical-align: middle;
 }
 
+.image-left-top {
+  margin-top: 5px;
+  margin-left: 5px;
+}
