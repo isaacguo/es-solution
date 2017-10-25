@@ -1,16 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {PublicComponent} from './components/public/public.component';
+import {SecureComponent} from './components/secure/secure.component';
+import {routing} from "../app.routing";
+import {HttpModule} from "@angular/http";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {BsModalModule} from "ng2-bs3-modal";
+import {IndexComponent} from "./components/public/index/index.component";
+import {LoginComponent} from "./components/public/login/login.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PublicComponent,
+    SecureComponent,
+    IndexComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, routing, BrowserModule, HttpModule, BsModalModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

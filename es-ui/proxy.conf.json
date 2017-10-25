@@ -1,0 +1,12 @@
+{
+  "/pmsorder": {
+    "target": "http://localhost:80",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/pmsupload": {
+    "target": "http://localhost:80",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
