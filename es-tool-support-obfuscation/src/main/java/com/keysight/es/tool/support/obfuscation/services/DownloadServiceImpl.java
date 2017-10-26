@@ -73,7 +73,7 @@ public class DownloadServiceImpl implements DownloadService {
     @Override
     public void getLicenseFile(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String url = this.storageProperties.getDotfuscatorLicensePath();
-        this.getFile(request, response, url, "license.dat");
+        this.getFile(request, response, url, "dotfuscator.dat");
     }
 
     @Override

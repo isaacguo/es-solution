@@ -35,7 +35,7 @@ export class DotfuscatorComponent implements OnInit {
 
   downloadLicenseFile() {
     this.dotfuscatorService.downloadLicense().subscribe(blob => {
-      importedSaveAs(blob, "license.dat");
+      importedSaveAs(blob, "dotfuscator.dat");
     });
   }
 
