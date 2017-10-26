@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: EsGateway
+  cloud:
+    config:
+      uri: http://localhost:17601

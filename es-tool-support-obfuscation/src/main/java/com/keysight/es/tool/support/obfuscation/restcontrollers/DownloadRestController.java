@@ -5,10 +5,14 @@ import com.keysight.es.tool.support.obfuscation.repositories.DotfuscatorInfoRepo
 import com.keysight.es.tool.support.obfuscation.services.DownloadService;
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.sql.DataSourceDefinition;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,9 +24,14 @@ public class DownloadRestController {
     private final DownloadService downloadService;
 
     @GetMapping
-    public List<DotfuscatorInfo> getDotfuscatorList()
+    public List<String> getDotfuscatorList()
     {
         return downloadService.getList();
     }
 
+    @GetMapping(value = "/file/{filename}/")
+    public void getNodeManager(HttpServletRequest request, HttpServletResponse response, @PathVariable("filename") String filename) throws IOException {
+
+        downloadService.getDotfuscator(request,response,filename);
+    }
 }

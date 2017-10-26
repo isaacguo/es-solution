@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///${user.home}/es-config-repo
+server:
+  port: 17601

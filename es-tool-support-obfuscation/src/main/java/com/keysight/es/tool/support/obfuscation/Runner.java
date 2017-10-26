@@ -16,10 +16,6 @@ public class Runner {
             @Override
             public void run(String... strings) throws Exception {
 
-                DotfuscatorInfo dotfuscatorInfo=new DotfuscatorInfo();
-                dotfuscatorInfo.setVersion("4.31.1_2.0");
-
-                dotfuscatorInfoRepository.save(dotfuscatorInfo);
 
             }
         };

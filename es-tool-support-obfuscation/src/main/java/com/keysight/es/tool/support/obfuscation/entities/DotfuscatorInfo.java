@@ -13,7 +13,7 @@ public class DotfuscatorInfo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    String Version;
+    String fileName;
 
 
 }
