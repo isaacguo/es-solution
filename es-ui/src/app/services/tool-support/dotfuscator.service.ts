@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, RequestOptions, Response, ResponseContentType} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
+import {DotfuscatorInfo} from "../../dto/DotfuscatorInfo.model";
 
 @Injectable()
 export class DotfuscatorService {
@@ -9,7 +10,7 @@ export class DotfuscatorService {
   constructor(private http: Http) {
   }
 
-  getDotfuscatorLatestInfo(): Observable<string> {
+  getDotfuscatorLatestInfo(): Observable<DotfuscatorInfo> {
     return this.http.get('/estoolobfuscation/downloads/latest')
       .map(this.extractData)
       .catch(this.handleError);

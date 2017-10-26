@@ -41,7 +41,7 @@ export class DotfuscatorComponent implements OnInit {
 
   getLatestInfo() {
     this.dotfuscatorService.getDotfuscatorLatestInfo().subscribe(info => {
-        this.latest = info;
+        this.latest = info.fileName;
         console.log("in getLatestInfo()"+ this.latest);
       },
       error => this.errorMessage = <any>error);

@@ -77,16 +77,19 @@ public class DownloadServiceImpl implements DownloadService {
     }
 
     @Override
-    public String getLatest() {
+    public DotfuscatorInfo getLatest() {
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(storageProperties.getDotfuscatorDirectory()))) {
             for (Path path : directoryStream) {
                 if (bareFileName(path).endsWith("-latest")) {
-                    return path.getFileName().toString().replace("-latest", "");
+                    String fn= path.getFileName().toString().replace("-latest", "");
+                    DotfuscatorInfo di=new DotfuscatorInfo();
+                    di.setFileName(fn);
+                    return di;
                 }
             }
         } catch (IOException ex) {
         }
-        return "";
+        return null;
     }
 
     @Override

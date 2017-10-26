@@ -16,6 +16,6 @@ public interface DownloadService {
 
     void getLicenseFile(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
-    String getLatest();
+    DotfuscatorInfo getLatest();
     void downloadLatest(HttpServletRequest request, HttpServletResponse response) throws IOException ;
 }

@@ -35,7 +35,7 @@ public class DownloadRestController {
     }
 
     @GetMapping(value = "/latest")
-    public String getDotfuscatorLatest() {
+    public DotfuscatorInfo getDotfuscatorLatest() {
         return downloadService.getLatest();
     }
 
