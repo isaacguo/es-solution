@@ -12,6 +12,7 @@ import {DotfuscatorComponent} from './components/tools/dotfuscator/dotfuscator.c
 import {ObfuscationComponent} from './components/workflow/obfuscation/obfuscation.component';
 import {FormsModule} from "@angular/forms";
 import {DotfuscatorService} from "./services/tool-support/dotfuscator.service";
+import {ObfuscationRequestService} from "./services/requests/obfuscation.request.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DotfuscatorService} from "./services/tool-support/dotfuscator.service";
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    DotfuscatorService
+    DotfuscatorService,
+    ObfuscationRequestService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: EsRequestObfuscation
+  cloud:
+    config:
+      uri: http://localhost:17601

@@ -13,6 +13,7 @@
         <module>es-gateway</module>
         <module>es-auth</module>
         <module>es-tool-support-obfuscation</module>
+        <module>es-request-obfuscation</module>
     </modules>
     <packaging>pom</packaging>
 

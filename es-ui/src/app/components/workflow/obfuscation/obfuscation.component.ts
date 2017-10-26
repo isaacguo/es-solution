@@ -12,8 +12,8 @@ export class ObfuscationComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit()
+  onSubmit(formValue: any)
   {
-
+    console.log(formValue);
   }
 }

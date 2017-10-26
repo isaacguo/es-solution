@@ -24,43 +24,47 @@
   </p>
 </div>
 
-<form #requestForm="ngForm">
+<form #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm.value)">
   <div class="form-group">
     <label for="user-name" class="control-label">User</label>
-    <input class="form-control" type="text" placeholder="You name" id="user-name" required>
+    <input class="form-control" type="text" placeholder="You name" id="user-name" required ngModel name="userName">
   </div>
 
   <div class="form-group">
     <label for="project-name" class="control-label">Project</label>
-    <input class="form-control" type="text" placeholder="Project Name" id="project-name" required>
+    <input class="form-control" type="text" placeholder="Project Name" id="project-name" required ngModel
+           name="projectName">
+  </div>
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkContainIP">
+      Does the project codebase contain Keysight intellectual property (IP)?</label>
+  </div>
+
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkExportToExternal"> Export to external customers? </label>
+  </div>
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkWinDesktopApplication"> Windows Desktop Application?</label>
+  </div>
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkWinCEApplication"> WindowsCE Application?</label>
+  </div>
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkShouldObfuscate"> Should the project codebase been
+      obfuscated?</label>
+  </div>
+
+  <div class="alert alert-warning">
+    <label><input type="checkbox" ngModel name="chkObfuscateAll"> Obfuscate all of the codes in codebase?</label>
   </div>
 
   <div class="form-group">
-    <label><input type="checkbox"> Does the project codebase Keysight intellectual property (IP)?</label>
-  </div>
-
-  <div class="form-group">
-    <label><input type="checkbox"> Should the project codebase been obfuscated?</label>
-  </div>
-
-  <div class="form-group">
-    <label><input type="checkbox"> Export to external customers? </label>
-  </div>
-
-  <div class="form-group">
-    <label><input type="checkbox"> Windows Desktop Application?</label>
-  </div>
-
-  <div class="form-group">
-    <label><input type="checkbox"> WindowsCE Application?</label>
-  </div>
-
-  <div class="form-group">
-    <label><input type="checkbox"> Obfuscate all of the codes in codebase?</label>
-  </div>
-
-  <div class="form-group">
-    <button type="submit" class="btn btn-default" (click)="onSubmit()"
+    <button type="submit" class="btn btn-default"
             [disabled]="!requestForm.form.valid">Submit
     </button>
   </div>
