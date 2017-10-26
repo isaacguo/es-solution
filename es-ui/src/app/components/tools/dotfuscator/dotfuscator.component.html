@@ -18,7 +18,7 @@
   <h4>Dotfuscator License File</h4>
   <p>Register Dotfuscator using this license file</p>
   <p>
-    <a type="button"
+    <a (click)="downloadLicenseFile()" type="button"
        class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"
                                      aria-hidden=" true"></span> Download
     </a>
@@ -50,10 +50,10 @@
 </div>
 
 <div class="well">
-  <h4>Dotfuscator 4.31 <span class="label label-info">New</span></h4>
+  <h4>{{latest}} <span class="label label-info">New</span></h4>
   <p>Dotfuscator Installation Package</p>
   <p>
-    <a type="button"
+    <a (click)="downloadLatestDotfuscator()" type="button"
        class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"
                                      aria-hidden=" true"></span> Download
     </a>
@@ -98,7 +98,7 @@
   <tr *ngFor="let item of dotfuscatorInfo">
     <td>{{item}}</td>
     <td><a class="btn" (click)="onDownloadClicked(item)"> <span class="glyphicon glyphicon-download-alt"
-                                             aria-hidden=" true"></span></a></td>
+                                                                aria-hidden=" true"></span></a></td>
     <td></td>
   </tr>
   </tbody>

@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Http, Response} from '@angular/http';
+import {Http, RequestOptions, Response, ResponseContentType} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 
 @Injectable()
@@ -9,22 +9,43 @@ export class DotfuscatorService {
   constructor(private http: Http) {
   }
 
-  getDotfuscatorInfo(): Observable < String[] > {
+  getDotfuscatorLatestInfo(): Observable<string> {
+    return this.http.get('/estoolobfuscation/downloads/latest')
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  getDotfuscatorInfo(): Observable<string[]> {
     return this.http.get('/estoolobfuscation/downloads')
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  downloadDotfuscator(item: string) {
-    return this.http.get(`/estoolobfuscation/downloads/file/${item}/`)
-      .map(this.extractData)
+  downloadDotfuscator(item: string): Observable<Blob> {
+    let url = `/estoolobfuscation/downloads/file/${item}/`;
+    return this.downloaditem(url);
+  }
+
+  downloadLatestDotfuscator(): Observable<Blob> {
+    let url = `/estoolobfuscation/downloads/latest/download`;
+    return this.downloaditem(url);
+  }
+
+  downloadLicense() {
+    let url = `/estoolobfuscation/downloads/licenseFile`;
+    return this.downloaditem(url);
+  }
+
+  downloaditem(item: string): Observable<Blob> {
+    let options = new RequestOptions({responseType: ResponseContentType.Blob});
+    return this.http.get(item, options)
+      .map(res => res.blob())
       .catch(this.handleError);
   }
 
+
   private extractData(res: Response) {
-    console.log('In QueueService res:' + res);
     let body = res.json();
-    console.log('In QueueService:' + body);
     return body || {};
   }
 

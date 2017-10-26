@@ -8,8 +8,8 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {BsModalModule} from "ng2-bs3-modal";
 import {IndexComponent} from "./components/index/index.component";
 import {LoginComponent} from "./components/login/login.component";
-import { DotfuscatorComponent } from './components/tools/dotfuscator/dotfuscator.component';
-import { ObfuscationComponent } from './components/workflow/obfuscation/obfuscation.component';
+import {DotfuscatorComponent} from './components/tools/dotfuscator/dotfuscator.component';
+import {ObfuscationComponent} from './components/workflow/obfuscation/obfuscation.component';
 import {FormsModule} from "@angular/forms";
 import {DotfuscatorService} from "./services/tool-support/dotfuscator.service";
 

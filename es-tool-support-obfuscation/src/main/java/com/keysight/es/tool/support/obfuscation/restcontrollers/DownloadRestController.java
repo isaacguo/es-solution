@@ -24,14 +24,29 @@ public class DownloadRestController {
     private final DownloadService downloadService;
 
     @GetMapping
-    public List<String> getDotfuscatorList()
-    {
+    public List<String> getDotfuscatorList() {
         return downloadService.getList();
     }
 
     @GetMapping(value = "/file/{filename}/")
     public void getNodeManager(HttpServletRequest request, HttpServletResponse response, @PathVariable("filename") String filename) throws IOException {
 
-        downloadService.getDotfuscator(request,response,filename);
+        downloadService.getDotfuscator(request, response, filename);
+    }
+
+    @GetMapping(value = "/latest")
+    public String getDotfuscatorLatest() {
+        return downloadService.getLatest();
+    }
+
+    @GetMapping(value = "/latest/download")
+    public void downloadDotfuscatorLatest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        downloadService.downloadLatest(request, response);
+    }
+
+    @GetMapping(value = "/licenseFile")
+    public void getLicenseFile(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        downloadService.getLicenseFile(request, response);
     }
 }

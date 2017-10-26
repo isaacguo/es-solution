@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DotfuscatorService} from "../../../services/tool-support/dotfuscator.service";
+import {saveAs as importedSaveAs} from "file-saver";
 
 @Component({
   selector: 'app-dotfuscator',
@@ -8,8 +9,9 @@ import {DotfuscatorService} from "../../../services/tool-support/dotfuscator.ser
 })
 export class DotfuscatorComponent implements OnInit {
 
-  dotfuscatorInfo: String[];
+  dotfuscatorInfo: string[];
   errorMessage: string;
+  latest: string;
 
 
   constructor(private dotfuscatorService: DotfuscatorService) {
@@ -17,6 +19,7 @@ export class DotfuscatorComponent implements OnInit {
 
   ngOnInit() {
     this.getDotfuscatorInfo();
+    this.getLatestInfo();
   }
 
   getDotfuscatorInfo() {
@@ -25,7 +28,28 @@ export class DotfuscatorComponent implements OnInit {
   }
 
   onDownloadClicked(item) {
-    this.dotfuscatorService.downloadDotfuscator(item).subscribe();
+    this.dotfuscatorService.downloadDotfuscator(item).subscribe(blob => {
+      importedSaveAs(blob, item);
+    });
   }
 
+  downloadLicenseFile() {
+    this.dotfuscatorService.downloadLicense().subscribe(blob => {
+      importedSaveAs(blob, "license.dat");
+    });
+  }
+
+  getLatestInfo() {
+    this.dotfuscatorService.getDotfuscatorLatestInfo().subscribe(info => {
+        this.latest = info;
+        console.log("in getLatestInfo()"+ this.latest);
+      },
+      error => this.errorMessage = <any>error);
+  }
+
+  downloadLatestDotfuscator() {
+    this.dotfuscatorService.downloadLatestDotfuscator().subscribe(blob => {
+      importedSaveAs(blob, this.latest);
+    });
+  }
 }
