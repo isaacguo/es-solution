@@ -3,6 +3,7 @@ import {ModuleWithProviders} from "@angular/core";
 import {IndexComponent} from "./app/components/index/index.component";
 import {DotfuscatorComponent} from "./app/components/tools/dotfuscator/dotfuscator.component";
 import {ObfuscationComponent} from "./app/components/workflow/obfuscation/obfuscation.component";
+import {LoginComponent} from "./app/components/login/login.component";
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
       }
     ]
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 
 ]
 

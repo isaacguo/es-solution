@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ObfuscationRequestService} from "../../../services/requests/obfuscation.request.service";
+import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 
 @Component({
   selector: 'app-obfuscation',
@@ -7,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObfuscationComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private obfuscationRequestService: ObfuscationRequestService) {
+  }
 
   ngOnInit() {
   }
 
-  onSubmit(formValue: any)
-  {
-    console.log(formValue);
+  onSubmit(formValue: any,modal:ModalComponent ) {
+    this.obfuscationRequestService.sendRequest(formValue).subscribe(
+      res => {
+        modal.open();
+      });
   }
 }

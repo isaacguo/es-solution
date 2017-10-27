@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {routing} from "../app.routing";
 import {HttpModule} from "@angular/http";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import {BsModalModule} from "ng2-bs3-modal";
 import {IndexComponent} from "./components/index/index.component";
 import {LoginComponent} from "./components/login/login.component";
 import {DotfuscatorComponent} from './components/tools/dotfuscator/dotfuscator.component';
@@ -13,6 +12,7 @@ import {ObfuscationComponent} from './components/workflow/obfuscation/obfuscatio
 import {FormsModule} from "@angular/forms";
 import {DotfuscatorService} from "./services/tool-support/dotfuscator.service";
 import {ObfuscationRequestService} from "./services/requests/obfuscation.request.service";
+import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 
 @NgModule({
   declarations: [
@@ -20,10 +20,10 @@ import {ObfuscationRequestService} from "./services/requests/obfuscation.request
     IndexComponent,
     LoginComponent,
     DotfuscatorComponent,
-    ObfuscationComponent
+    ObfuscationComponent,
   ],
   imports: [
-    BrowserModule, routing, BrowserModule, HttpModule, BsModalModule, FormsModule
+    BrowserModule, routing, BrowserModule, HttpModule,  FormsModule, Ng2Bs3ModalModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

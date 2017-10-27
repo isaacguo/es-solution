@@ -73,7 +73,7 @@ public class DownloadServiceImpl implements DownloadService {
     @Override
     public void getLicenseFile(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String url = this.storageProperties.getDotfuscatorLicensePath();
-        this.getFile(request, response, url, "dotfuscator.dat");
+        this.getFile(request, response, url, storageProperties.getDotfuscatorLicenseName());
     }
 
     @Override
@@ -81,8 +81,8 @@ public class DownloadServiceImpl implements DownloadService {
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(Paths.get(storageProperties.getDotfuscatorDirectory()))) {
             for (Path path : directoryStream) {
                 if (bareFileName(path).endsWith("-latest")) {
-                    String fn= path.getFileName().toString().replace("-latest", "");
-                    DotfuscatorInfo di=new DotfuscatorInfo();
+                    String fn = path.getFileName().toString().replace("-latest", "");
+                    DotfuscatorInfo di = new DotfuscatorInfo();
                     di.setFileName(fn);
                     return di;
                 }

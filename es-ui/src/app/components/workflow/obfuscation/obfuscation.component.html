@@ -1,3 +1,17 @@
+<modal #requestResponseModal (onClose)="onRequestResponseModalClosed()">
+  <form #modalForm3="ngForm">
+    <modal-header [show-close]="true">
+      <h4 class="modal-title">Obfuscation Request Reponse</h4>
+    </modal-header>
+    <modal-body>
+      Approved!
+    </modal-body>
+    <modal-footer>
+      <button type="button" class="btn btn-primary" (click)="requestResponseModal.close()">Confirm</button>
+    </modal-footer>
+  </form>
+</modal>
+
 <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">Obfuscation Request for Software Product and Regulatory </h1>
@@ -24,7 +38,7 @@
   </p>
 </div>
 
-<form #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm.value)">
+<form #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm.value,requestResponseModal)">
   <div class="form-group">
     <label for="user-name" class="control-label">User</label>
     <input class="form-control" type="text" placeholder="You name" id="user-name" required ngModel name="userName">

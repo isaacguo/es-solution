@@ -17,5 +17,7 @@ public class StorageProperties {
     @Value("${dotfuscator.license.path}")
     private String dotfuscatorLicensePath;
 
+    @Value("${dotfuscator.license.name}")
+    private String dotfuscatorLicenseName;
 
 }
