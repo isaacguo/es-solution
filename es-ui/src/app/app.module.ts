@@ -13,6 +13,8 @@ import {FormsModule} from "@angular/forms";
 import {DotfuscatorService} from "./services/tool-support/dotfuscator.service";
 import {ObfuscationRequestService} from "./services/requests/obfuscation.request.service";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
+import { SlackComponent } from './components/business/slack/slack.component';
+import {SalckService} from "./services/business/slack.service";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
     LoginComponent,
     DotfuscatorComponent,
     ObfuscationComponent,
+    SlackComponent,
   ],
   imports: [
     BrowserModule, routing, BrowserModule, HttpModule,  FormsModule, Ng2Bs3ModalModule
@@ -28,7 +31,8 @@ import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     DotfuscatorService,
-    ObfuscationRequestService
+    ObfuscationRequestService,
+    SalckService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Slack Service</h1>
+  </div>
+  <!-- /.col-lg-12 -->
+</div>
+
+<form #requestForm="ngForm">
+  <div class="form-group">
+    <label for="webhookurl" class="control-label">Webhook Url</label>
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="webHookUrl" id="webhookurl" required [ngModel]="slackbotInfo.webhookUrl"
+             name="webhookUrl"
+             readonly>
+      <span class="input-group-btn">
+      <button class="btn btn-default" type="button"><i class="fa fa-pencil"></i></button>
+      </span>
+    </div>
+  </div>
+</form>
+
+
+<div class="alert alert-info" role="alert">Test Slack Bot
+  <div class="input-group">
+    <input class="form-control" type="text" placeholder="message to send to slack channel" id="messageToSend" required
+            name="messageToSend" multiple [(ngModel)]="testMessage">
+    <span class="input-group-btn">
+      <button (click)="sendMessage()" class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+      </span>
+  </div>
+</div>
+

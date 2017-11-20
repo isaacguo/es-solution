@@ -4,6 +4,7 @@ import {IndexComponent} from "./app/components/index/index.component";
 import {DotfuscatorComponent} from "./app/components/tools/dotfuscator/dotfuscator.component";
 import {ObfuscationComponent} from "./app/components/workflow/obfuscation/obfuscation.component";
 import {LoginComponent} from "./app/components/login/login.component";
+import {SlackComponent} from "./app/components/business/slack/slack.component";
 
 
 const appRoutes: Routes = [
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
       {
         path: 'obfuscation',
         component: ObfuscationComponent
+      },
+      {
+        path:'slack',
+        component:SlackComponent
       }
     ]
   },

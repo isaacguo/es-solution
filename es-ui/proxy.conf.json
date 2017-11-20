@@ -8,5 +8,10 @@
     "target": "http://localhost:80",
     "secure": false,
     "logLevel": "debug"
+  },
+  "/esslack": {
+    "target": "http://localhost:80",
+    "secure": false,
+    "logLevel": "debug"
   }
 }
