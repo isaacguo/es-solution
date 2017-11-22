@@ -14,6 +14,7 @@
         <module>es-auth</module>
         <module>es-tool-support-obfuscation</module>
         <module>es-request-obfuscation</module>
+        <module>es-slack</module>
     </modules>
     <packaging>pom</packaging>
 

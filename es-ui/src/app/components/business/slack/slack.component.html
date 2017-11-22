@@ -9,11 +9,11 @@
   <div class="form-group">
     <label for="webhookurl" class="control-label">Webhook Url</label>
     <div class="input-group">
-      <input class="form-control" type="text" placeholder="webHookUrl" id="webhookurl" required [ngModel]="slackbotInfo.webhookUrl"
+      <input class="form-control" type="text" placeholder="webHookUrl" id="webhookurl"  [(ngModel)]="slackbotInfo.webhookUrl"
              name="webhookUrl"
-             readonly>
+             [readonly]="!isEditing">
       <span class="input-group-btn">
-      <button class="btn btn-default" type="button"><i class="fa fa-pencil"></i></button>
+      <button (click)="onEditButtonClicked()" class="btn btn-default" type="button"><i class="fa fa-pencil"></i></button>
       </span>
     </div>
   </div>

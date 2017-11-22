@@ -1,6 +1,6 @@
 spring:
   application:
-    name: EsRequestObfuscation
+    name: EsSlack
   cloud:
     config:
       uri: http://localhost:17601
