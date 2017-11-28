@@ -22,4 +22,9 @@ export class ObfuscationComponent implements OnInit {
         modal.open();
       });
   }
+
+  onRequestResponseModalClosed()
+  {
+
+  }
 }

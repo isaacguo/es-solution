@@ -55,7 +55,7 @@ public class SlackServiceImpl implements SlackService {
     }
 
     private void sendDataToGraphite() {
-        SimpleGraphiteClient graphiteClient = new SimpleGraphiteClient("localhost", 2003);
+        SimpleGraphiteClient graphiteClient = new SimpleGraphiteClient("graphite", 2003);
 
 // send single value with current timestamp
         graphiteClient.sendMetric("keysight.es.slack", 1);

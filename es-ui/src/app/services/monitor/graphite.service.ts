@@ -16,7 +16,6 @@ export class GraphiteService {
   postDataToGraphiteServer()
   {
     let url=`http://localhost:2003`;
-    this.http.post("")
 
   }
 

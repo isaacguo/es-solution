@@ -14,8 +14,8 @@ export class SlackComponent implements OnInit {
   constructor(private slackService: SalckService) {
   }
 
-  private slackbotInfo: SlackBotInfo = {};
-  private testMessage: string;
+  slackbotInfo: SlackBotInfo = {};
+  testMessage: string;
 
   ngOnInit() {
     this.getSlackBotInfo();
