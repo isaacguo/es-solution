@@ -26,7 +26,7 @@ import {SalckService} from "./services/business/slack.service";
     SlackComponent,
   ],
   imports: [
-    BrowserModule, routing, BrowserModule, HttpModule,  FormsModule, Ng2Bs3ModalModule
+    BrowserModule, routing, HttpModule,  FormsModule, Ng2Bs3ModalModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
