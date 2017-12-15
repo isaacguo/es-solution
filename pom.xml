@@ -10,7 +10,7 @@
         <module>es-email</module>
         <module>es-config-server</module>
         <module>es-eureka</module>
-	<!--<module>es-gateway</module>-->
+	<module>es-gateway</module>
         <module>es-auth</module>
         <module>es-tool-support-obfuscation</module>
         <module>es-request-obfuscation</module>
