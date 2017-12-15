@@ -4,3 +4,5 @@ spring:
   cloud:
     config:
       uri: http://localhost:17601
+server:
+  port: 8080

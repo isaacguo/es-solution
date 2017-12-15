@@ -13,6 +13,16 @@ export class SalckService {
   }
 
 
+  setSlackBotInfo(slackBotInfo:SlackBotInfo):Observable<boolean> {
+    let url = `/esslack/message/create`;
+
+    let headers = new Headers({'Content-Type': 'application/json'}); // ... Set content type to JSON
+    let options = new RequestOptions({headers: headers});
+
+    return this.http.post(url, JSON.stringify(slackBotInfo), options)
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   getSlackBotInfo(): Observable<SlackBotInfo[]> {
 
     let url = `/esslack/message`;
